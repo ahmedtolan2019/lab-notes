@@ -180,7 +180,7 @@ erDiagram
     Project  ||--o{ EmployeeProject : "includes"
     Employee {
         INT EmployeeID PK
-        ...
+        
     }
     Project {
         INT ProjectID PK
