@@ -174,7 +174,7 @@ Effective requirement gathering is crucial for project success.
 ##### Example Diagram:
 
 ```mermaid
-%%{init: {'theme':'base'}}%%
+
 graph LR
     subgraph System
         direction TB
