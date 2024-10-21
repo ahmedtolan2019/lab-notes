@@ -63,9 +63,9 @@ SQL (Structured Query Language) is a standard programming language used to manag
 
 ```mermaid
 erDiagram
-    TableA ||--|| TableB : One-to-One
-    TableC ||--o{ TableD : One-to-Many
-    TableE }o--o{ TableF : Many-to-Many
+    TableA ||--|| TableB : "One-to-One"
+    TableC ||--o{ TableD : "One-to-Many"
+    TableE }o--o{ TableF : "Many-to-Many"
 ```
 
 ---
