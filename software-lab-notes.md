@@ -183,10 +183,10 @@ graph LR
         UC3(Manage Products)
         UC4(View Reports)
     end
-    User -->> UC1
-    User -->> UC2
-    Admin -->> UC3
-    Admin -->> UC4
+    User --> UC1
+    User --> UC2
+    Admin --> UC3
+    Admin --> UC4
 ```
 
 #### Data Flow Diagrams (DFDs)
