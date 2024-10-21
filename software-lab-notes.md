@@ -174,13 +174,19 @@ Effective requirement gathering is crucial for project success.
 ##### Example Diagram:
 
 ```mermaid
-usecase
-    actor User
-    actor Admin
-    User --> (Browse Products)
-    User --> (Place Order)
-    Admin --> (Manage Products)
-    Admin --> (View Reports)
+%%{init: {'theme':'base'}}%%
+graph LR
+    subgraph System
+        direction TB
+        UC1(Browse Products)
+        UC2(Place Order)
+        UC3(Manage Products)
+        UC4(View Reports)
+    end
+    User -->> UC1
+    User -->> UC2
+    Admin -->> UC3
+    Admin -->> UC4
 ```
 
 #### Data Flow Diagrams (DFDs)
