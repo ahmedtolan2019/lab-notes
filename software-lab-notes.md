@@ -46,7 +46,7 @@
 
 ### What is Software Engineering?
 
-**Software Engineering** is the disciplined application of engineering principles to the development of software. It encompasses a set of methodologies, tools, and practices aimed at producing high-quality software efficiently and reliably.
+**Software Engineering** is the disciplined application of engineering principles to the development, operation, and maintenance of software systems. It involves the systematic use of methodologies, tools, and techniques to produce high-quality software efficiently and reliably.
 
 #### Key Components:
 
@@ -129,7 +129,7 @@ flowchart LR
 | Aspect                  | Traditional (Waterfall)        | Agile                         |
 |-------------------------|--------------------------------|-------------------------------|
 | **Process Flow**        | Linear and sequential          | Iterative and incremental     |
-| **Flexibility**         | Rigid, difficult to change     | Highly adaptable               |
+| **Flexibility**         | Rigid, difficult to change     | Highly adaptable              |
 | **Customer Involvement**| Limited after requirements     | Continuous collaboration      |
 | **Documentation**       | Extensive upfront              | Minimal, as needed            |
 | **Risk Management**     | High risk due to late testing  | Lower risk with early testing |
@@ -174,7 +174,7 @@ Effective requirement gathering is crucial for project success.
 ##### Example Diagram:
 
 ```mermaid
-usecaseDiagram
+usecase
     actor User
     actor Admin
     User --> (Browse Products)
@@ -395,10 +395,10 @@ For a "User Authentication" feature:
 - **Controller**: Manages user input and interactions.
 
 ```mermaid
-flowchart TD
+flowchart LR
+    Controller --> Model
     Model --> View
     View --> Controller
-    Controller --> Model
 ```
 
 #### Client-Server Model
@@ -432,7 +432,7 @@ classDiagram
     class Admin {
         +manageUsers()
     }
-    Admin --> User : inherits
+    Admin --|> User : inherits
 ```
 
 #### Sequence Diagrams
@@ -448,6 +448,7 @@ sequenceDiagram
     participant User
     participant Browser
     participant Server
+    participant Database
     User ->> Browser: Enters credentials
     Browser ->> Server: Sends login request
     Server ->> Database: Validates credentials
@@ -497,6 +498,8 @@ sequenceDiagram
     <!-- Meta Tags for SEO -->
     <meta name="description" content="A brief description of my web page">
     <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!-- Viewport for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheet Linking -->
     <link rel="stylesheet" href="styles.css">
     <!-- External Library Linking -->
@@ -523,6 +526,7 @@ sequenceDiagram
   - **Charset**: `<meta charset="UTF-8">` sets character encoding.
   - **Description**: Improves SEO.
   - **Keywords**: Relevant search terms.
+  - **Viewport**: Ensures proper scaling on mobile devices.
 - **Title Tag**: Displayed in browser tabs and search results.
 - **Stylesheets Linking**:
   - Internal: `<style>...</style>`
@@ -534,7 +538,7 @@ sequenceDiagram
 - **Content Tags**:
   - **Paragraph**: `<p>Text</p>`
   - **Division**: `<div></div>`
-  - **Headings**: `<h1> to <h6>`
+  - **Headings**: `<h1>` to `<h6>`
   - **Table**: `<table></table>`
 - **Semantic Tags**:
   - **Article**: `<article></article>`
@@ -911,7 +915,7 @@ Feature: Task Creation
 ##### Use Case Diagram
 
 ```mermaid
-usecaseDiagram
+usecase
     actor User
     User --> (Register)
     User --> (Login)
@@ -941,7 +945,7 @@ classDiagram
         +edit()
         +delete()
     }
-    User "1" -- "*" Task : owns
+    User "1" --> "*" Task : owns
 ```
 
 ##### Sequence Diagram
